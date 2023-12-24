@@ -1,8 +1,32 @@
 import React from 'react'
 import logo from '/logo.png'
 import { FiPhoneCall } from "react-icons/fi";
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const Navbar = () => {
+  const [isSticky, setSticky] = useState(false)
+
+  //handle scroll function
+  useEffect(()=>{
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if(offset > 0){
+        setSticky(true)
+      }else{
+        setSticky(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+
+  },[])
+
+
   const navItems =(
 
     <>
@@ -33,8 +57,8 @@ const Navbar = () => {
     </>
   )
   return (
-    <header className='max-w-screen-2xl container mx-auto'>
-        <div className="navbar xl:px-24">
+    <header className='max-w-screen-2xl container mx-auto fixed top-0 right-0 transition-all duration-300 ease-in-out '>
+        <div className={`navbar xl:px-24 ${isSticky ?"shadow-md bg-white transition-all duration-300 ease-in-out" : ""}`}>
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -70,17 +94,11 @@ const Navbar = () => {
       </div>
 
     {/*btn*/}
-    <a 
-  className="btn bg-green rounded-full px-6 text-white hidden lg:flex items-center gap-2"
-  style={{
-    border: 'none',  // Remove the dark border
-    transition: 'background-color 0.3s',  // Add a transition for a smooth color change on hover
-  }}
-  onMouseOver={(e) => { e.target.style.backgroundColor = '#004d00' }}
-  onMouseOut={(e) => { e.target.style.backgroundColor = '#39DB4A' }}
->
+    <button class="btn bg-green rounded-full px-6 text-white hidden lg:flex items-center gap-2 hover:bg-hovergreen border-0 transition duration-300">
   <FiPhoneCall /> Contact
-</a>
+</button>
+
+
   </div>
 </div>
 </header>
