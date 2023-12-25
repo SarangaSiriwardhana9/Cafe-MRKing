@@ -30,13 +30,13 @@ const Navbar = () => {
   const navItems =(
 
     <>
-    <li><a href='/'>Home</a></li>
+    <li><a className='text-green' href='/'>Home</a></li>
       <li tabIndex={0}>
         <details>
           <summary>Menu</summary>
           <ul className="p-2 bg-white">
-            <li><a>ALL</a></li>
-            <li><a>Salad 2</a></li>
+            <li><a href="/menu">ALL</a></li>
+            <li><a>Salad</a></li>
             <li><a>Pizza</a></li>
           </ul>
         </details>

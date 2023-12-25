@@ -1,3 +1,7 @@
+
+
+
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -11,7 +15,7 @@ const Cards = ({ item }) => {
   };
 
   return (
-    <div className="card w-72 h-72 bg-base-100  shadow-2xl bg-white relative">
+    <div className="card  w-[350px] h-78 bg-base-100  mb-8 mt-8 shadow-xl bg-slate-100 relative">
       <div
         className={`rating gap-1 absolute right-2 top-2 p-4 heartStar bg-green ${
           isHeartFilled ? 'text-rose-500' : 'text-white'
@@ -25,11 +29,11 @@ const Cards = ({ item }) => {
 
       <Link to={`/menu/${item._id}`}>
         <figure>
-          <img
-            src={item.image}
-            alt=""
-            className="object-cover mt-4  w-28   h-28 hover:scale-105 transition-all duration-200 "
-          />
+        <img
+              src={item.image}
+              alt=""
+              className="object-cover mt-3 -mb-6 w-48 h-full sm:h-48 hover:scale-105 transition-all duration-200"
+            />
         </figure>
       </Link>
 
@@ -38,9 +42,9 @@ const Cards = ({ item }) => {
         <p>Description of the item</p>
         <div className="card-actions justify-between items-center   ">
           <h5 className="font-semibold ">
-            <span className="text-sm text-red  mt-8">{item.price}</span>
+            <span className="text-m text-red flex gap-2  mt-6"> <h5>RS  </h5> {item.price}</span>
           </h5>
-          <button className="btn   mt-6   w-24    h-2 bg-green text-white hover:bg-hovergreen border-none">Buy Now</button>
+          <button className="btn   mt-4   w-24    h-2 bg-green text-white hover:bg-hovergreen border-none">Buy Now</button>
         </div>
       </div>
     </div>

@@ -38,9 +38,9 @@ const Categories = () => {
             {/* Category cards */}
             <div className='flex flex-col sm:flex-row flex-wrap gap-8 justify-around items-center mt-12 '>
                 {categoryItems.map((item, i) => (
-                    <div key={i} className='shadow-lg rounded-md bg-white py-6 px-5 w-71 mx-auto text-center cursor-pointer duration-300 transition-all hover:-translate-y-4'>
+                    <div key={i} className='shadow-lg rounded-md bg-white py-6 px-5  w-71 mx-auto text-center cursor-pointer duration-300 transition-all hover:-translate-y-4'>
                         <div className='flex w-full mx-auto justify-center'>
-                            <img src={item.image} alt={item.title}  className='bg-[#C1F1C6] p-5 rounded-full w-28 h-28'/>
+                            <img src={item.image} alt={item.title}  className='bg-[#C1F1C6] mb-6 p-5 rounded-full w-28 h-28'/>
                         </div>
                         <div className='mt-5 space-y-1'>
                             <h4 className='text-gray-600'>{item.title}</h4>
