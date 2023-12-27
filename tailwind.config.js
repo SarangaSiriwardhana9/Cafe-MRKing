@@ -9,6 +9,8 @@ export default {
       colors: {
         "green":"#39DB4A",
         "hovergreen":"#2EB43E",
+        "lightHoverGreen":"#75EC71",
+        "LightHoverRed":"#FD8B8B ",
         "red":"#FF6868",
         "secondary":"#555",
         "primary":"#FCFCFC",

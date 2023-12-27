@@ -91,8 +91,7 @@ const SpecialDishes = () => {
       }
     ],
 
-    nextArrow: <simpleNextArrow />,
-    prevArrow: <simplePrevArrow />
+    
   };
 
 
